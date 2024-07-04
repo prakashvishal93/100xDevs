@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    async function getInterestRate(){
+        const a = document.getElementById("principal").value;
+        const b = document.getElementById("rate").value;
+        const c = document.getElementById("time").value;
+
+        const response = await fetch("https://sum-server.100xdevs.com/interest?principal="+ a + "&rate="+ b + "&time=" + c)
+
+        const ans = await response.text();
+
+        document.getElementById("populateAns").innerHTML = ans;
+    }
+
+</script>
+<body>
+
+    <input type="text" placeholder="Principal" id="principal">
+    <br><br>
+    <input type="text" placeholder="Rate" id="rate">
+    <br><br>
+    <input type="text" placeholder="Time" id="time">
+    <br><br>
+
+    <button onclick="getInterestRate()" id="interest">Get Total & Interest </button>
+
+    <div id="populateAns"></div>
+
+
+ 
+
+</body>
+</html>
