@@ -14,9 +14,9 @@ function getAnimalData() {
 
 async function getAnimalData() {
     const response = await fetch("https://jsonplaceholder.typicode.com/users")
-      const json = await response.json()
-      .then(function(finalData){
-          console.log(finalData);
-    })
+      const finalData = await response.json()
+      document.getElementById("userdata").innerHTML = JSON.stringify(finalData);
+      
+    
   }
   
