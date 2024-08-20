@@ -19,6 +19,8 @@ function App() {
     }
   ]);
 
+  
+
 
   function addTodo(){
     setTodos([...todos,{
@@ -37,8 +39,17 @@ function App() {
       {todos.map(function(todo){
         return <Todo title = {todo.title} description = {todo.description} />
       })}
+
+      <DummyButton />
     </div>
   )
+}
+
+function DummyButton(props){
+  console.log("Re Render is happening here");
+
+  return <button>fdifsdjflds</button>
+  
 }
 
 
